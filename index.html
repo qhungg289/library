@@ -14,6 +14,18 @@
 	</head>
 	<body>
 		<h1>Library Application</h1>
+		<p>Add new book to library.</p>
+		<form id="the-form">
+			<label for="title">Book's title:</label>
+			<input type="text" id="title" name="title" /><br /><br />
+			<label for="author">Book's author:</label>
+			<input type="text" id="author" name="author" /><br /><br />
+			<input type="radio" id="not-yet" name="read" value="Not yet" />
+			<label for="not-yet">Not yet</label>
+			<input type="radio" id="already" name="read" value="Already" />
+			<label for="already">Already</label> <br /><br />
+			<input type="submit" id="submit" value="Submit" />
+		</form>
 		<script src="./object.js"></script>
 	</body>
 </html>
