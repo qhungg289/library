@@ -4,5 +4,24 @@ html {
 
 body {
 	display: flex;
+	flex-direction: column;
 	justify-content: center;
+}
+
+h1 {
+	background-color: black;
+	font-size: 2.6rem;
+	color: white;
+	padding: 0 10px 0 10px;
+	width: max-content;
+	font-style: italic;
+}
+
+p {
+	font-size: 2rem;
+}
+
+input {
+	padding: 0.4rem;
+	border-radius: 8px;
 }
