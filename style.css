@@ -1,11 +1,12 @@
 html {
-	font-family: "Montserrat", sans-serif;
+	font-family: "Roboto Slab", serif;
 }
 
 body {
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
+	align-items: center;
 }
 
 h1 {
@@ -16,14 +17,63 @@ h1 {
 	width: max-content;
 }
 
-input {
+button {
+	width: 120px;
 	padding: 0.4rem;
-	border-radius: 8px;
+	margin: 20px 0 20px 0;
+}
+
+#modal {
+	display: none;
+	position: fixed;
+	z-index: 1;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+}
+
+#the-form {
+	background-color: black;
+	color: white;
+	margin: 15% auto;
+	padding: 20px;
+	width: 50%;
+}
+
+#close {
+	margin-top: -10px;
+	color: white;
+	float: right;
+	font-size: 28px;
+	font-weight: bold;
+}
+
+#close:hover,
+#close:focus {
+	color: gray;
+	text-decoration: none;
+	cursor: pointer;
+}
+
+input[type="submit"] {
+	padding: 0.4rem;
+}
+
+input[type="text"] {
+	width: 80%;
+	padding: 0.4rem;
 }
 
 #table {
 	margin-top: 20px;
-	width: 550px;
+	width: 100%;
+}
+
+th {
+	background-color: black;
+	color: white;
 }
 
 #table,
