@@ -12,16 +12,24 @@ h1 {
 	background-color: black;
 	font-size: 2.6rem;
 	color: white;
-	padding: 0 10px 0 10px;
+	padding: 4px 8px 4px 8px;
 	width: max-content;
-	font-style: italic;
-}
-
-p {
-	font-size: 2rem;
 }
 
 input {
 	padding: 0.4rem;
 	border-radius: 8px;
+}
+
+#table {
+	margin-top: 20px;
+	width: 550px;
+}
+
+#table,
+th,
+td {
+	border: 2px solid black;
+	padding: 4px;
+	border-collapse: collapse;
 }

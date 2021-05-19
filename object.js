@@ -1,4 +1,5 @@
 let myLibrary = [];
+let table = document.getElementById("table");
 
 document.getElementById("the-form").onsubmit = function () {
 	let readStatus;
@@ -33,9 +34,20 @@ function addBookToLibrary(title, author, read) {
 	} else {
 		const newBook = new Book(title, author, read);
 		myLibrary.push(newBook);
+		showBooksInLibrary();
 	}
 }
 
 function showBooksInLibrary() {
-	myLibrary.forEach((book) => console.log(book));
+	let template;
+	myLibrary.forEach((book) => {
+		template = `
+			<tr>
+				<td>${book.title}</td>
+				<td>${book.author}</td>
+				<td>${book.read}</td>
+			</tr>
+		`;
+	});
+	table.innerHTML += template;
 }
