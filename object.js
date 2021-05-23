@@ -1,23 +1,8 @@
 let myLibrary = [];
 let table = document.getElementById("table");
-let modal = document.getElementById("modal");
-let button = document.getElementById("button");
-let closeBtn = document.getElementById("close");
+let tbody = document.getElementsByTagName("tbody");
 let form = document.getElementById("the-form");
-
-button.onclick = function () {
-	modal.style.display = "block";
-};
-
-closeBtn.onclick = function () {
-	modal.style.display = "none";
-};
-
-window.onclick = function (event) {
-	if (event.target == modal) {
-		modal.style.display = "none";
-	}
-};
+let trashBtn = document.getElementsByClassName("trashBtn");
 
 form.onsubmit = function () {
 	let readStatus;
@@ -38,7 +23,6 @@ form.onsubmit = function () {
 	document.getElementById("not-yet").checked = false;
 	document.getElementById("already").checked = false;
 
-	modal.style.display = "none";
 	return false;
 };
 
@@ -58,16 +42,42 @@ function addBookToLibrary(title, author, read) {
 	}
 }
 
+function setDataAttribute() {
+	for (let i = 0; i < tbody.length; i++) {
+		[...tbody][i].setAttribute("data-index", `${i}`);
+		[...trashBtn][i].setAttribute("data-index", `${i}`);
+	}
+}
+
+function removeBookObjectAndRow(index) {
+	for (let i = 0; i < tbody.length; i++) {
+		if (index == tbody[i].dataset.index) {
+			tbody[i].remove();
+			myLibrary.splice(index, 1);
+		}
+	}
+}
+
 function showBooksInLibrary() {
 	let template;
 	myLibrary.forEach((book) => {
 		template = `
+		<tbody>
 			<tr>
 				<td>${book.title}</td>
 				<td>${book.author}</td>
 				<td>${book.read}</td>
+				<td><button class="trashBtn"><i class="fas fa-trash-alt"></i></button></td>
 			</tr>
+		</tbody>
 		`;
 	});
 	table.innerHTML += template;
+	setDataAttribute();
+	[...trashBtn].forEach((btn) => {
+		btn.addEventListener("click", function () {
+			removeBookObjectAndRow(btn.dataset.index);
+			setDataAttribute();
+		});
+	});
 }
