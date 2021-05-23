@@ -11,32 +11,41 @@
 			href="https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap"
 			rel="stylesheet"
 		/>
+		<script
+			src="https://kit.fontawesome.com/313ff853e5.js"
+			crossorigin="anonymous"
+		></script>
 	</head>
 	<body>
-		<h1>Library Application</h1>
-		<button id="button">NEW BOOK</button>
 		<div id="modal">
+			<i class="fas fa-book"></i>
 			<form id="the-form">
-				<span id="close">&times;</span>
 				<label for="title">Book's title:</label><br /><br />
 				<input type="text" id="title" name="title" /><br /><br />
 				<label for="author">Book's author:</label><br /><br />
 				<input type="text" id="author" name="author" /><br /><br />
-				<label>Read status:</label>
+				<label>Read status:</label><br /><br />
 				<input type="radio" id="already" name="read" value="Already" />
-				<label for="already">Already</label>
+				<label for="already">Already</label><br /><br />
 				<input type="radio" id="not-yet" name="read" value="Not yet" />
 				<label for="not-yet">Not yet</label><br /><br />
 				<input type="submit" id="submit" value="Submit" />
 			</form>
 		</div>
-		<table id="table">
-			<tr>
-				<th>Title</th>
-				<th>Author</th>
-				<th>Read status</th>
-			</tr>
-		</table>
+		<div id="content">
+			<h1>Library Application</h1>
+			<table id="table">
+				<thead>
+					<tr>
+						<th>Title</th>
+						<th>Author</th>
+						<th>Read status</th>
+						<th></th>
+					</tr>
+				</thead>
+			</table>
+		</div>
+
 		<script src="./object.js"></script>
 	</body>
 </html>
