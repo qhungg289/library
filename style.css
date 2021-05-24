@@ -43,7 +43,7 @@ button {
 #modal {
 	display: flex;
 	flex-direction: column;
-	justify-content: center;
+	justify-content: space-around;
 	align-items: center;
 	height: 100%;
 	width: 300px;
@@ -59,15 +59,16 @@ button {
 	background-color: black;
 	color: white;
 	width: 90%;
-	margin-top: 100px;
 }
 
 input[type="submit"] {
 	padding: 0.4rem;
+	font-weight: bold;
+	font-family: "Roboto Slab";
 }
 
 input[type="text"] {
-	width: 80%;
+	width: inherit;
 	padding: 0.4rem;
 }
 
