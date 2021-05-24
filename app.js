@@ -53,6 +53,7 @@ function addBookToLibrary(title, author, read) {
 		const newBook = new Book(title, author, read);
 		myLibrary.push(newBook);
 		saveDataToLocalStorage(myLibrary);
+
 		document.getElementById("title").value = null;
 		document.getElementById("author").value = null;
 		document.getElementById("not-yet").checked = false;
@@ -92,9 +93,8 @@ function showBooksInLibrary() {
 		item.innerHTML = "";
 	}
 
-	let template;
 	myLibrary.forEach((book) => {
-		template = `
+		table.innerHTML += `
 		<tbody>
 			<tr>
 				<td>${book.title}</td>
@@ -107,7 +107,6 @@ function showBooksInLibrary() {
 			</tr>
 		</tbody>
 		`;
-		table.innerHTML += template;
 	});
 
 	setDataAttribute();
