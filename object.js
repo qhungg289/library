@@ -20,11 +20,6 @@ form.onsubmit = function () {
 		readStatus
 	);
 
-	document.getElementById("title").value = null;
-	document.getElementById("author").value = null;
-	document.getElementById("not-yet").checked = false;
-	document.getElementById("already").checked = false;
-
 	return false;
 };
 
@@ -48,6 +43,10 @@ function addBookToLibrary(title, author, read) {
 	} else {
 		const newBook = new Book(title, author, read);
 		myLibrary.push(newBook);
+		document.getElementById("title").value = null;
+		document.getElementById("author").value = null;
+		document.getElementById("not-yet").checked = false;
+		document.getElementById("already").checked = false;
 		showBooksInLibrary();
 	}
 }
