@@ -8,6 +8,7 @@ let readValue = document.getElementsByClassName("readValue");
 let storedLibrary = [];
 
 window.onload = function () {
+	storedLibrary = JSON.parse(localStorage.getItem("library"));
 	myLibrary = storedLibrary;
 	if (myLibrary.length != 0) {
 		showBooksInLibrary();
