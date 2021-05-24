@@ -15,29 +15,10 @@ h1 {
 }
 
 button {
-	width: 120px;
-	padding: 0.4rem;
-	margin: 20px 0 20px 0;
 }
 
 #content {
 	margin: 10px;
-}
-
-.fa-book {
-	color: white;
-	font-size: 90px;
-}
-
-.trashBtn {
-	font-size: 20px;
-	width: 100%;
-	border: none;
-	background-color: white;
-}
-
-.trashBtn:hover {
-	color: red;
 }
 
 #modal {
@@ -65,16 +46,40 @@ input[type="submit"] {
 	padding: 0.4rem;
 	font-weight: bold;
 	font-family: "Roboto Slab";
+	width: 120px;
+	margin: 20px 0 20px 0;
 }
 
 input[type="text"] {
 	width: inherit;
 	padding: 0.4rem;
+	font-family: "Roboto Slab";
 }
 
 #table {
 	margin-top: 20px;
 	width: 100%;
+}
+
+.fa-book {
+	color: white;
+	font-size: 90px;
+}
+
+.trashBtn,
+.editBtn {
+	font-size: 20px;
+	/* width: 100%; */
+	border: none;
+	background-color: transparent;
+}
+
+.trashBtn:hover {
+	color: red;
+}
+
+.editBtn:hover {
+	color: lightseagreen;
 }
 
 th {
@@ -86,10 +91,18 @@ td {
 	text-align: center;
 }
 
+td:last-child {
+	width: 80px;
+}
+
+tr:hover {
+	background-color: lightgrey;
+}
+
 #table,
 th,
 td {
-	border: 2px solid black;
+	border-bottom: 2px solid black;
 	padding: 4px;
 	border-collapse: collapse;
 }
