@@ -3,6 +3,8 @@ let table = document.getElementById("table");
 let tbody = document.getElementsByTagName("tbody");
 let form = document.getElementById("the-form");
 let trashBtn = document.getElementsByClassName("trashBtn");
+let editBtn = document.getElementsByClassName("editBtn");
+let readValue = document.getElementsByClassName("readValue");
 
 form.onsubmit = function () {
 	let readStatus;
@@ -32,6 +34,14 @@ function Book(title, author, read) {
 	this.read = read;
 }
 
+Book.prototype.changeReadStatus = function () {
+	if (this.read == document.getElementById("not-yet").value) {
+		this.read = document.getElementById("already").value;
+	} else {
+		this.read = document.getElementById("not-yet").value;
+	}
+};
+
 function addBookToLibrary(title, author, read) {
 	if (title == "" || author == "" || read == undefined) {
 		alert("Enter a valid information before submit!");
@@ -46,6 +56,7 @@ function setDataAttribute() {
 	for (let i = 0; i < tbody.length; i++) {
 		[...tbody][i].setAttribute("data-index", `${i}`);
 		[...trashBtn][i].setAttribute("data-index", `${i}`);
+		[...editBtn][i].setAttribute("data-index", `${i}`);
 	}
 }
 
@@ -66,18 +77,34 @@ function showBooksInLibrary() {
 			<tr>
 				<td>${book.title}</td>
 				<td>${book.author}</td>
-				<td>${book.read}</td>
-				<td><button class="trashBtn"><i class="fas fa-trash-alt"></i></button></td>
+				<td class="readValue">${book.read}</td>
+				<td>
+					<button title="Change read status" class="editBtn"><i class="fas fa-edit"></i></button>
+					<button title="Delete Book from library" class="trashBtn"><i class="fas fa-trash-alt"></i></button>
+				</td>
 			</tr>
 		</tbody>
 		`;
 	});
 	table.innerHTML += template;
+
 	setDataAttribute();
+
 	[...trashBtn].forEach((btn) => {
 		btn.addEventListener("click", function () {
 			removeBookObjectAndRow(btn.dataset.index);
 			setDataAttribute();
+		});
+	});
+	[...editBtn].forEach((btn) => {
+		btn.addEventListener("click", function () {
+			for (let i = 0; i < myLibrary.length; i++) {
+				if (btn.dataset.index == i) {
+					myLibrary[i].changeReadStatus();
+					readValue[i].innerText = myLibrary[i].read;
+					console.table(myLibrary);
+				}
+			}
 		});
 	});
 }
