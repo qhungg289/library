@@ -92,7 +92,7 @@ td:last-child {
 }
 
 tr:hover {
-	background-color: lightgrey;
+	background-color: #ededed;
 }
 
 #table,
