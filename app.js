@@ -101,7 +101,6 @@ function showBooksInLibrary() {
 				if (btn.dataset.index == i) {
 					myLibrary[i].changeReadStatus();
 					readValue[i].innerText = myLibrary[i].read;
-					console.table(myLibrary);
 				}
 			}
 		});
