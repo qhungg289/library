@@ -5,6 +5,14 @@ let form = document.getElementById("the-form");
 let trashBtn = document.getElementsByClassName("trashBtn");
 let editBtn = document.getElementsByClassName("editBtn");
 let readValue = document.getElementsByClassName("readValue");
+let storedLibrary = [];
+
+window.onload = function () {
+	myLibrary = storedLibrary;
+	if (myLibrary.length != 0) {
+		showBooksInLibrary();
+	}
+};
 
 form.onsubmit = function () {
 	let readStatus;
@@ -43,6 +51,7 @@ function addBookToLibrary(title, author, read) {
 	} else {
 		const newBook = new Book(title, author, read);
 		myLibrary.push(newBook);
+		saveDataToLocalStorage(myLibrary);
 		document.getElementById("title").value = null;
 		document.getElementById("author").value = null;
 		document.getElementById("not-yet").checked = false;
@@ -65,6 +74,15 @@ function removeBookObjectAndRow(index) {
 			tbody[i].remove();
 			myLibrary.splice(index, 1);
 		}
+	}
+}
+
+function saveDataToLocalStorage(arr) {
+	if (typeof Storage !== "undefined") {
+		localStorage.setItem("library", JSON.stringify(arr));
+		storedLibrary = JSON.parse(localStorage.getItem("library"));
+	} else {
+		alert("Web Storage is disabled.");
 	}
 }
 
@@ -93,6 +111,7 @@ function showBooksInLibrary() {
 		btn.addEventListener("click", function () {
 			removeBookObjectAndRow(btn.dataset.index);
 			setDataAttribute();
+			saveDataToLocalStorage(myLibrary);
 		});
 	});
 	[...editBtn].forEach((btn) => {
@@ -103,6 +122,7 @@ function showBooksInLibrary() {
 					readValue[i].innerText = myLibrary[i].read;
 				}
 			}
+			saveDataToLocalStorage(myLibrary);
 		});
 	});
 }
