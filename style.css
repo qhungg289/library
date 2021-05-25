@@ -14,11 +14,11 @@ html {
 
 body {
 	margin-left: 310px;
-	background-color: var(--light-pink);
+	background-color: var(--white);
 }
 
 h1 {
-	font-size: 2.6rem;
+	font-size: 3rem;
 	color: var(--dark-blue);
 	padding: 4px 8px 4px 8px;
 	width: max-content;
@@ -28,8 +28,6 @@ h1 {
 	margin: 20px;
 	display: flex;
 	flex-direction: column;
-
-	align-items: center;
 }
 
 #modal {
@@ -149,18 +147,21 @@ input[type="radio"]:checked {
 	margin-top: 20px;
 	width: 100%;
 	border-radius: var(--radius);
+	color: var(--white);
 	overflow: hidden;
 }
 
 th {
 	background-color: var(--dark-blue);
-	color: var(--white);
 }
 
 tr {
 	text-align: center;
-	color: var(--white);
-	background-color: var(--pink);
+	background-color: var(--light-pink);
+}
+
+tbody {
+	color: var(--dark-blue);
 }
 
 #table,
