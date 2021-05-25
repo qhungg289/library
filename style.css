@@ -19,7 +19,7 @@ body {
 
 h1 {
 	font-size: 3rem;
-	color: var(--dark-blue);
+	color: var(--purple);
 	padding: 4px 8px 4px 8px;
 	width: max-content;
 }
@@ -152,12 +152,12 @@ input[type="radio"]:checked {
 }
 
 th {
-	background-color: var(--dark-blue);
+	background-color: var(--purple);
 }
 
 tr {
 	text-align: center;
-	background-color: var(--light-pink);
+	background-color: var(--white);
 }
 
 tbody {
