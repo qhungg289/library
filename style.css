@@ -238,12 +238,12 @@ td:last-child {
 
 	label,
 	input {
-		font-size: 6vw;
+		font-size: 5vw;
 	}
 
 	input[type="radio"] + *::before {
-		width: 1.8rem;
-		height: 1.8rem;
+		width: 1.4rem;
+		height: 1.4rem;
 	}
 
 	input[type="submit"],
