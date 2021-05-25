@@ -24,6 +24,7 @@
 	<body>
 		<div id="modal">
 			<i class="fas fa-book"></i>
+
 			<form id="the-form">
 				<label for="title">Book's title:</label><br /><br />
 				<input type="text" id="title" name="title" /><br /><br />
@@ -34,11 +35,15 @@
 				<label for="already">Already</label><br /><br />
 				<input type="radio" id="not-yet" name="read" value="Not yet" />
 				<label for="not-yet">Not yet</label><br /><br />
+				<input type="button" id="cancel" value="Cancel" />
 				<input type="submit" id="submit" value="Submit" />
 			</form>
 		</div>
 		<div id="content">
 			<h1>Private library 📚</h1>
+			<button title="Add new book to your library." id="newBtn">
+				New book
+			</button>
 			<table id="table">
 				<thead>
 					<tr>

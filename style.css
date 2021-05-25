@@ -18,11 +18,32 @@ body {
 }
 
 h1 {
-	font-size: 3rem;
+	font-size: 5vw;
 	color: var(--purple);
 	padding: 4px 8px 4px 8px;
 	width: max-content;
 	font-weight: bold;
+}
+
+#newBtn {
+	display: none;
+	padding: 0.4rem;
+	font-weight: bold;
+	font-family: "Roboto Slab";
+	font-size: 0.9rem;
+	color: var(--dark-blue);
+	width: 120px;
+	height: 40px;
+	margin: 10px 0 10px 0;
+	border: none;
+	border-radius: var(--radius);
+	background-color: var(--light-pink);
+	cursor: pointer;
+	transition: 0.3s;
+}
+
+#newBtn:active {
+	background-color: var(--lavender);
 }
 
 #content {
@@ -56,7 +77,8 @@ input {
 	transition: 0.3s;
 }
 
-input[type="submit"] {
+input[type="submit"],
+input[type="button"] {
 	padding: 0.4rem;
 	font-weight: bold;
 	font-family: "Roboto Slab";
@@ -72,6 +94,10 @@ input[type="submit"] {
 
 input[type="submit"]:hover {
 	background-color: var(--lavender);
+}
+
+input[type="button"] {
+	display: none;
 }
 
 input[type="text"] {
@@ -177,4 +203,62 @@ td {
 
 td:last-child {
 	width: 80px;
+}
+
+@media only screen and (max-width: 480px) {
+	#modal {
+		display: none;
+		width: 100%;
+	}
+
+	body {
+		margin-left: 10px;
+	}
+
+	h1 {
+		font-size: 10vw;
+	}
+
+	#newBtn {
+		display: block;
+	}
+
+	#content {
+		align-items: center;
+	}
+
+	td:last-child {
+		width: 40px;
+	}
+
+	#table,
+	td {
+		padding: 4px;
+	}
+
+	label,
+	input {
+		font-size: 6vw;
+	}
+
+	input[type="radio"] + *::before {
+		width: 1.8rem;
+		height: 1.8rem;
+	}
+
+	input[type="submit"],
+	input[type="button"] {
+		margin-right: 10px;
+		padding: 0.8rem;
+		height: auto;
+	}
+
+	input[type="button"] {
+		display: inline;
+	}
+
+	input[type="submit"]:active,
+	input[type="button"]:active {
+		background-color: var(--lavender);
+	}
 }

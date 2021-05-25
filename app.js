@@ -6,6 +6,9 @@ let form = document.getElementById("the-form");
 let trashBtn = document.getElementsByClassName("trashBtn");
 let editBtn = document.getElementsByClassName("editBtn");
 let readValue = document.getElementsByClassName("readValue");
+let newBtn = document.getElementById("newBtn");
+let cancelBtn = document.getElementById("cancel");
+let modal = document.getElementById("modal");
 
 window.onload = function () {
 	storedLibrary = JSON.parse(localStorage.getItem("library"));
@@ -13,6 +16,14 @@ window.onload = function () {
 		myLibrary = storedLibrary;
 		showBooksInLibrary();
 	}
+};
+
+newBtn.onclick = function () {
+	modal.style.display = "flex";
+};
+
+cancelBtn.onclick = function () {
+	modal.style.display = "none";
 };
 
 form.onsubmit = function () {
