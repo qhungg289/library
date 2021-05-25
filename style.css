@@ -135,12 +135,9 @@ input[type="radio"]:checked {
 	cursor: pointer;
 }
 
-.trashBtn:hover {
-	color: var(--white);
-}
-
+.trashBtn:hover,
 .editBtn:hover {
-	color: var(--white);
+	color: var(--pink);
 }
 
 #table {
@@ -149,10 +146,12 @@ input[type="radio"]:checked {
 	border-radius: var(--radius);
 	color: var(--white);
 	overflow: hidden;
+	border-collapse: collapse;
 }
 
 th {
 	background-color: var(--purple);
+	padding: 10px;
 }
 
 tr {
@@ -160,16 +159,19 @@ tr {
 	background-color: var(--white);
 }
 
+tr:hover {
+	transition: 0.4s;
+	background-color: var(--light-pink);
+}
+
 tbody {
 	color: var(--dark-blue);
 }
 
 #table,
-th,
 td {
 	border-bottom: 2px dashed var(--dark-blue);
 	padding: 10px;
-	border-collapse: collapse;
 }
 
 td:last-child {
