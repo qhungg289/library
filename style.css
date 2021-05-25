@@ -22,6 +22,7 @@ h1 {
 	color: var(--purple);
 	padding: 4px 8px 4px 8px;
 	width: max-content;
+	font-weight: bold;
 }
 
 #content {
