@@ -68,7 +68,7 @@ function addBookToLibrary(title, author, read) {
 		document.getElementById("title").value = null;
 		document.getElementById("author").value = null;
 		document.getElementById("not-yet").checked = false;
-		document.getElementById("already").checked = false;
+		document.getElementById("already").checked = true;
 
 		showBooksInLibrary();
 	}
@@ -110,9 +110,11 @@ function showBooksInLibrary() {
 			<tr>
 				<td>${book.title}</td>
 				<td>${book.author}</td>
-				<td class="readValue">${book.read}</td>
+				<td class="readValue">
+					${book.read}
+				</td>
 				<td>
-					<button title="Change read status" class="editBtn"><i class="fas fa-edit"></i></button>
+					<button title="Change read status" class="editBtn"><i class="fas fa-check"></i></i></button>
 					<button title="Delete Book from library" class="trashBtn"><i class="fas fa-trash-alt"></i></button>
 				</td>
 			</tr>
