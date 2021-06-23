@@ -43,10 +43,12 @@ form.onsubmit = function () {
 	return false;
 };
 
-function Book(title, author, read) {
-	this.title = title;
-	this.author = author;
-	this.read = read;
+class Book {
+	constructor(_title, _author, _read) {
+		this.title = _title;
+		this.author = _author;
+		this.read = _read;
+	}
 }
 
 Object.prototype.changeReadStatus = function () {
@@ -110,9 +112,7 @@ function showBooksInLibrary() {
 			<tr>
 				<td>${book.title}</td>
 				<td>${book.author}</td>
-				<td class="readValue">
-					${book.read}
-				</td>
+				<td class="readValue">${book.read}</td>
 				<td>
 					<button title="Change read status" class="editBtn"><i class="fas fa-check"></i></i></button>
 					<button title="Delete Book from library" class="trashBtn"><i class="fas fa-trash-alt"></i></button>
@@ -131,6 +131,7 @@ function showBooksInLibrary() {
 			saveDataToLocalStorage(myLibrary);
 		});
 	});
+
 	[...editBtn].forEach((btn) => {
 		btn.addEventListener("click", function () {
 			for (let i = 0; i < myLibrary.length; i++) {
