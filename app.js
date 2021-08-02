@@ -60,20 +60,16 @@ Object.prototype.changeReadStatus = function () {
 };
 
 function addBookToLibrary(title, author, read) {
-	if (title == "" || author == "" || read == undefined) {
-		alert("Enter a valid information before submit!");
-	} else {
-		const newBook = new Book(title, author, read);
-		myLibrary.push(newBook);
-		saveDataToLocalStorage(myLibrary);
+	const newBook = new Book(title, author, read);
+	myLibrary.push(newBook);
+	saveDataToLocalStorage(myLibrary);
 
-		document.getElementById("title").value = null;
-		document.getElementById("author").value = null;
-		document.getElementById("not-yet").checked = false;
-		document.getElementById("already").checked = true;
+	document.getElementById("title").value = null;
+	document.getElementById("author").value = null;
+	document.getElementById("not-yet").checked = false;
+	document.getElementById("already").checked = true;
 
-		showBooksInLibrary();
-	}
+	showBooksInLibrary();
 }
 
 function setDataAttribute() {
