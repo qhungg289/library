@@ -1,7 +1,9 @@
-# virtual-library
+# Library 📘
 
-Web application created for The Odin Project.
+Web application created to help you manage your reading habit 📖.
 
-![Screenshot](https://i.imgur.com/ndMJrmb.png)
+This project made for learning purpose at **The Odin Project**.
 
-[Live Preview](https://qhungg289.github.io/library/)
+[**Live Preview**](https://qhungg289.github.io/library/)
+
+![Screenshot](./asset/readme-library.png)
