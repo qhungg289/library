@@ -1,10 +1,7 @@
 :root {
-	--purple: #6f4367;
-	--lavender: #a69aca;
+	--blue: #586bab;
 	--dark-blue: #253657;
-	--pink: #e76d8a;
-	--light-pink: #f5a1a1;
-	--white: #f8e9e5;
+	--white: #ffffff;
 	--radius: 8px;
 }
 
@@ -19,7 +16,7 @@ body {
 
 h1 {
 	font-size: 5vw;
-	color: var(--purple);
+	color: var(--blue);
 	padding: 4px 8px 4px 8px;
 	width: max-content;
 	font-weight: bold;
@@ -43,7 +40,7 @@ h1 {
 }
 
 #newBtn:active {
-	background-color: var(--lavender);
+	background-color: var(--dark-blue);
 }
 
 #content {
@@ -63,7 +60,7 @@ h1 {
 	z-index: 1;
 	top: 0;
 	left: 0;
-	background-color: var(--purple);
+	background-color: var(--blue);
 	overflow-x: hidden;
 }
 
@@ -93,7 +90,8 @@ input[type="button"] {
 }
 
 input[type="submit"]:hover {
-	background-color: var(--lavender);
+	background-color: var(--dark-blue);
+	color: white;
 }
 
 input[type="button"] {
@@ -113,11 +111,11 @@ input[type="text"] {
 }
 
 input[type="text"]:valid {
-	border: 4px solid var(--lavender);
+	border: 4px solid var(--dark-blue);
 }
 
 input[type="text"]:invalid:focus {
-	border: 4px solid rgb(218, 55, 55);
+	border: 4px solid rgb(214, 82, 82);
 }
 
 input[type="radio"] {
@@ -139,16 +137,16 @@ input[type="radio"] + *::before {
 
 input[type="radio"]:checked + *::before {
 	background: radial-gradient(
-		var(--lavender) 0%,
-		var(--lavender) 40%,
+		var(--white) 0%,
+		var(--white) 40%,
 		transparent 50%,
 		transparent
 	);
-	border-color: var(--lavender);
+	border-color: var(--white);
 }
 
 input[type="radio"]:checked {
-	color: var(--lavender);
+	color: var(--white);
 }
 
 .fa-book {
@@ -169,7 +167,7 @@ input[type="radio"]:checked {
 
 .trashBtn:hover,
 .editBtn:hover {
-	color: var(--pink);
+	color: var(--blue);
 }
 
 #table {
@@ -182,7 +180,7 @@ input[type="radio"]:checked {
 }
 
 th {
-	background-color: var(--purple);
+	background-color: var(--blue);
 	padding: 10px;
 }
 
@@ -191,10 +189,10 @@ tr {
 	background-color: var(--white);
 }
 
-tr:hover {
+/* tr:hover {
 	transition: 0.4s;
 	background-color: var(--light-pink);
-}
+} */
 
 tbody {
 	color: var(--dark-blue);
@@ -264,6 +262,6 @@ td:last-child {
 
 	input[type="submit"]:active,
 	input[type="button"]:active {
-		background-color: var(--lavender);
+		background-color: var(--dark-blue);
 	}
 }
